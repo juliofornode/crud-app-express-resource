@@ -1,0 +1,26 @@
+<h3 style="margin-bottom: 30px; margin-top: 30px;">Product Detail Page</h3>
+
+<table class="table table-bordered">
+    <tr class="active">
+        <th>Image</th>
+        <th>Product</th>
+        <th>Code</th>
+        <th>Available</th>
+        <th>Price</th>
+        <th>Tags</th>
+        <th>Actions</th>
+    </tr>
+    <tr>
+        <td><img height="50" width="50" class="img-rounded" ng-src="{{vm.product.imageUrl}}"</td>
+        <td>{{vm.product.name}}</td>
+        <td>{{vm.product.code}}</td>
+        <td>{{vm.product.available | date }}</td>
+        <td>{{vm.product.price | currency}}</td>
+        <td>{{vm.product.tags.join(', ')}}</td>
+        <td>
+            <a class="btn btn-info" ui-sref="products">Back</a>
+            <a class="btn btn-primary" ui-sref="productEdit({productId: vm.product._id})">Edit</a>
+        </td>
+    </tr>
+
+</table>

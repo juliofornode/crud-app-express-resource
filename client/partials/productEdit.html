@@ -1,0 +1,32 @@
+<h3>Product: {{ vm.product.name }}</h3>
+
+<form name="newProductForm" class="form-horizontal">
+
+    <div class="form-group">
+        <label for="productName" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control"
+                   id="productName" name="productName"
+                   required
+                   placeholder="Product Name" ng-model="vm.product.name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="productCode" class="col-sm-2 control-label">Code</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control"
+                   id="productCode" name="productCode"
+                   placeholder="Product Code in format ABC-1234" ng-model="vm.product.code">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-success" ng-click="vm.save()">Save</button>
+            <button type="button" class="btn btn-danger" ng-click="vm.remove()">Remove</button>
+            <button type="button" class="btn btn-warning" ng-click="vm.cancel()">Cancel</button>
+        </div>
+    </div>
+
+
+</form>

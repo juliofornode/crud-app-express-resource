@@ -1,0 +1,23 @@
+{
+  "name": "001-angular-charts",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Julio <juliofornode@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "angular": "^1.5.7",
+    "angular-ui-router": "^0.3.1"
+  }
+}

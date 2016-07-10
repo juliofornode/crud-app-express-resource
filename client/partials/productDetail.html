@@ -2,25 +2,27 @@
 
 <table class="table table-bordered">
     <tr class="active">
-        <th>Image</th>
-        <th>Product</th>
-        <th>Code</th>
-        <th>Available</th>
+        <th><button ng-click="vm.imageToggle()">{{ vm.imageShowed ? "Hide" : "Show" }} Image</button></th>
+        <th>Title</th>
+        <th>Author</th>
         <th>Price</th>
-        <th>Tags</th>
-        <th>Actions</th>
+        <th>Date</th>
+        <th>Action</th>
     </tr>
     <tr>
-        <td><img height="50" width="50" class="img-rounded" ng-src="{{vm.product.imageUrl}}"</td>
-        <td>{{vm.product.name}}</td>
-        <td>{{vm.product.code}}</td>
-        <td>{{vm.product.available | date }}</td>
+        <td><img height="50" width="50" class="img-rounded" ng-src="imgs/{{vm.product.imageUrl}}"</td>
+        <td>{{vm.product.title}}</td>
+        <td>{{vm.product.author}}</td>
         <td>{{vm.product.price | currency}}</td>
-        <td>{{vm.product.tags.join(', ')}}</td>
+        <td>{{vm.product.date | date}}</td>
+
         <td>
             <a class="btn btn-info" ui-sref="products">Back</a>
             <a class="btn btn-primary" ui-sref="productEdit({productId: vm.product._id})">Edit</a>
         </td>
     </tr>
 
+
 </table>
+<br/>
+<p>{{vm.product.description}}</p>

@@ -1,21 +1,20 @@
-<h3 style="margin-bottom: 30px; margin-top: 30px;">Line of business app</h3>
+<h3 style="margin-bottom: 30px; margin-top: 30px;">Books App</h3>
 
 <table class="table table-bordered">
     <tr class="active">
         <th><button ng-click="vm.imageToggle()">{{ vm.imageShowed ? "Hide" : "Show" }} Image</button></th>
-        <th>Product</th>
-        <th>Code</th>
-        <th>Available</th>
+        <th>Title</th>
+        <th>Author</th>
         <th>Price</th>
-        <th>Tags</th>
+        <th>Date</th>
     </tr>
+
     <tr ng-repeat="product in vm.products">
-        <td><img ng-if="vm.imageShowed" height="50" width="50" class="img-rounded" ng-src="{{product.imageUrl}}"</td>
-        <td><a ui-sref="productDetail({productId: product._id})">{{product.name}}</a></td>
-        <td>{{product.code}}</td>
-        <td>{{product.available | date}}</td>
+        <td><img ng-if="vm.imageShowed" height="50" width="50" class="img-rounded" ng-src="imgs/{{product.imageUrl}}"</td>
+        <td><a ui-sref="productDetail({productId: product._id})">{{product.title}}</a></td>
+        <td>{{product.author}}</td>
         <td>{{product.price | currency}}</td>
-        <td>{{product.tags.join(', ')}}</td>
+        <td>{{product.date | date}}</td>
     </tr>
 
 </table>

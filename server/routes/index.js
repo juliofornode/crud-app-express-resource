@@ -23,10 +23,12 @@ router.get('/api/products/:productId', function (req, res, next) {
 router.post('/api/products', function(req, res, next) {
 
     var product = new Product({
-        name: req.body.name,
-        code: req.body.code,
-        available: req.body.available,
-        tags: req.body.tags
+        imageUrl: req.body.imageUrl,
+        title: req.body.title,
+        author: req.body.author,
+        description: req.body.description,
+        price: req.body.price,
+        date: req.body.date
     });
 
     product.save(function(err, result) {
@@ -39,11 +41,12 @@ router.post('/api/products', function(req, res, next) {
 router.put('/api/products/:productId', function (req, res, next) {
     Product.findById(req.params.productId)
         .exec(function(err, product) {
-
-            product.name = req.body.name;
-            product.code = req.body.code;
-            product.available = req.body.available;
-            product.tags = req.body.tags;
+            product.imageUrl = req.body.imageUrl;
+            product.title = req.body.title;
+            product.author = req.body.author;
+            product.description = req.body.description;
+            product.price = req.body.price;
+            product.date = req.body.date;
 
             product.save(function (err, result) {
                 if (err) {

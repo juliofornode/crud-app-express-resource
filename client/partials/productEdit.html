@@ -3,20 +3,68 @@
 <form name="newProductForm" class="form-horizontal">
 
     <div class="form-group">
-        <label for="productName" class="col-sm-2 control-label">Name</label>
+        <label for="productImageUrl" class="col-sm-2 control-label">Image Url</label>
         <div class="col-sm-10">
             <input type="text" class="form-control"
-                   id="productName" name="productName"
+                   id="productImage" name="productImageUrl"
                    required
-                   placeholder="Product Name" ng-model="vm.product.name">
+                   placeholder="Product Image Url" ng-model="vm.product.imageUrl">
         </div>
     </div>
+
     <div class="form-group">
-        <label for="productCode" class="col-sm-2 control-label">Code</label>
+        <label for="productTitle" class="col-sm-2 control-label">Title</label>
         <div class="col-sm-10">
             <input type="text" class="form-control"
-                   id="productCode" name="productCode"
-                   placeholder="Product Code in format ABC-1234" ng-model="vm.product.code">
+                   id="productTitle" name="productTitle"
+                   required
+                   placeholder="Product Title" ng-model="vm.product.title">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="productAuthor" class="col-sm-2 control-label">Author</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control"
+                   id="productAuthor" name="productAuthor"
+                   required
+                   placeholder="Product Author" ng-model="vm.product.author">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="productDescription" class="col-sm-2 control-label">Description</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control"
+                   id="productDescription" name="productDescription"
+                   required
+                   placeholder="Product Description" ng-model="vm.product.description">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="productPrice" class="col-sm-2 control-label">Price</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control"
+                   id="productPrice" name="productPrice"
+                   placeholder="Product Price" ng-model="vm.product.price">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="datePicker" class="col-sm-2 control-label" ng-controller="DatePickerController">Date</label>
+        <div class="col-sm-10">
+            <p class="input-group">
+                <input type="text" class="form-control" id="datePicker"
+                       uib-datepicker-popup="{{format}}"
+                       is-open="popup1.opened" datepicker-options="dateOptions"
+                       close-text="Close" alt-input-formats="altInputFormats"
+                       ng-model="vm.product.date"/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default"
+                                ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+            </p>
         </div>
     </div>
 

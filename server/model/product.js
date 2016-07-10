@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 
 var productSchema = mongoose.Schema({
     imageUrl: String,
-    name: String,
-    code: String,
-    available: Date,
+    title: String,
+    author: String,
+    description: String,
     price: Number,
-    tags: Array
+    date: Date
 });
 
 module.exports = mongoose.model('Product', productSchema);

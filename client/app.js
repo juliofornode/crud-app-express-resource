@@ -2,7 +2,7 @@
 
     "use strict";
 
-    var myApp = angular.module('myApp', ['ui.router']);
+    var myApp = angular.module('myApp', ['ui.router', 'ngResource']);
 
     myApp.config(function($stateProvider, $urlRouterProvider) {
 

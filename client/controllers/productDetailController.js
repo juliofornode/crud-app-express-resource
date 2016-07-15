@@ -5,13 +5,13 @@
     angular.module('myApp')
         .controller('ProductDetailController', ProductDetailController);
 
-    function ProductDetailController(productId, $http) {
+    function ProductDetailController(productId, ProductResource) {
 
         var vm = this;
 
-        $http.get('/api/products/' + productId).success(function(gotFromApi) {
-            vm.product = gotFromApi;
-        });
+        vm.product = ProductResource.get({ productId: productId }, function() {
+        }); // get() returns a single entry
+
 
     }
 

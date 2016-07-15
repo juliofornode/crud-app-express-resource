@@ -5,22 +5,22 @@
     angular.module('myApp')
         .controller('ProductEditController', ProductEditController);
 
-    function ProductEditController($http, productId, $state) {
+    function ProductEditController(productId, $state, ProductResource) {
         var vm = this;
 
 
-        $http.get('/api/products/' + productId).success(function(gotFromApi) {
-            vm.product = gotFromApi;
+        vm.product = ProductResource.get({ productId: productId }, function() {
         });
 
+
         vm.save = function() {
-            $http.put('/api/products/' + vm.product._id, vm.product).success(function(gotFromApi) {
+            vm.product.$update(function() {
                 $state.go('products');
-            })
+            });
         };
 
         vm.remove = function() {
-            $http.delete('/api/products/' + productId).success(function(gotFromApi) {
+            vm.product.$delete(function() {
                 $state.go('products');
             });
         };

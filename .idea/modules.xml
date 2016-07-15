@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/010-books-app.iml" filepath="$PROJECT_DIR$/.idea/010-books-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/express-and-resource.iml" filepath="$PROJECT_DIR$/.idea/express-and-resource.iml" />
     </modules>
   </component>
 </project>

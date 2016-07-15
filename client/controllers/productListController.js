@@ -5,16 +5,13 @@
     angular.module('myApp')
         .controller('ProductListController', ProductListController);
 
-    function ProductListController($http) {
+    function ProductListController(ProductResource) {
 
         var vm = this;
 
         //list all products
-        $http.get('/api/products')
-            .success(function(gotFromApi) {
-                vm.products = gotFromApi;
-            });
-
+        vm.products = ProductResource.query(function() {
+        }); //query() returns all the entries
 
         vm.imageShowed = true;
 
